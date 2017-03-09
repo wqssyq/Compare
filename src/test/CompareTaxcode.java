@@ -85,11 +85,14 @@ public class CompareTaxcode {
 			//testReadFile();
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("第一个文件的路径：");
-			String fnSj = br.readLine();
+			String fnSj = br.readLine().trim();
 			System.out.println("第二个文件的路径：");
-			String fnSjk = br.readLine();
+			String fnSjk = br.readLine().trim();
 			System.out.println("所生成文件的路径：");
-			String fnOut = br.readLine();
+			String fnOut = br.readLine().trim();
+			if(fnSj.length()==0 || fnSjk.length()==0 || fnOut.length()==0){
+				return;
+			}
 			preComp(fnSj, fnSjk, fnOut);
 		} catch (Exception e) {
 			e.printStackTrace();
